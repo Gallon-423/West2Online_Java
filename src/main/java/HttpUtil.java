@@ -5,6 +5,13 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import java.io.IOException;
+/**
+ * @Author Gallon
+ * @ClassName HttpUtil
+ * @Package
+ * @Description
+ * @Time 2022-01-08,周六 20:49
+ */
 public class HttpUtil {
     public static StringBuilder getCityJSON(String key, String cityName) throws IOException {
         String cityQueryUrl = "https://geoapi.qweather.com/v2/city/lookup?key="
@@ -29,4 +36,5 @@ public class HttpUtil {
         client.close();
         return new StringBuilder(content);
     }
+
 }
