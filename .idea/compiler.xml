@@ -8,8 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="WeatherQuery" />
         <module name="MybatisLearning" />
-        <module name="FastjsonLearning" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="FastjsonLearning" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
