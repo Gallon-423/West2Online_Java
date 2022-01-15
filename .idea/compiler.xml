@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="West2Online_Java" />
+        <module name="WeatherQuery" />
+        <module name="MybatisLearning" />
+        <module name="FastjsonLearning" />
       </profile>
     </annotationProcessing>
   </component>
