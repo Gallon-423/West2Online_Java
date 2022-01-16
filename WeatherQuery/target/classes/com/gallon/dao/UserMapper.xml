@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gallon.dao.UserMapper">
+    <select id="getCityList" resultType="com.gallon.pojomini.CityMini">
+        select * from west2.city_info
+    </select>
+    <select id="selectCityByName" resultType="com.gallon.pojomini.CityMini">
+        select * from west2.city_info where name = #{name}
+    </select>
+    <insert id="addCity" parameterType="com.gallon.pojomini.CityMini">
+        replace into west2.city_info (id,name,lon,lat) values (#{id},#{name},#{lon},#{lat})
+    </insert>
+    <delete id="deleteCity" >
+        delete from west2.city_info where name = #{name}
+    </delete>
+    <select id="getInfoList" resultType="com.gallon.pojomini.WeatherMini">
+        select * from west2.weather
+    </select>
+    <insert id="addWeather" parameterType="com.gallon.pojomini.WeatherMini">
+    replace into west2.weather (date,id,min,max,text,city) values (#{date},#{id},#{min},#{max},#{text},#{city})
+    </insert>
+    <select id="getWeather" resultType="com.gallon.pojomini.WeatherMini">
+        select * from west2.weather where date = #{date} and city = #{city}
+    </select>
+
+</mapper>
