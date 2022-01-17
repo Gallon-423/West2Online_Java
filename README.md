@@ -1,5 +1,6 @@
 # West2Online_Java
 ## 西二考核第三轮
+![bk](./pic/1028034.jpg)
 ### · 使用Maven进行项目构建
 ### · 数据库使用Mysql，数据库可视化工具使用Sqlyog
 ### · 数据库连接使用Mybatis框架（仅用到增删改查）
