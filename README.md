@@ -25,7 +25,7 @@
 #### 表2、weather
 ![table](./pic/weather.png)
 ------
-##加分项完成情况
+## 加分项完成情况
 + 实现分页查询
 + Mybatis框架自带事务管理
 + JSON封装未实现
