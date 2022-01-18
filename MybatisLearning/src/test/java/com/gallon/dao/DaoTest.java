@@ -9,7 +9,7 @@ import java.util.List;
 
 public class DaoTest {
     @Test
-    public void test1(){
+    public void getCityListTest(){
         SqlSession sqlSession= BasicUtils.getSqlSession();
         UserMapper userMapper=sqlSession.getMapper(UserMapper.class);
         List<City> cityList= userMapper.getCityList();
@@ -21,7 +21,7 @@ public class DaoTest {
         sqlSession.close();
     }
     @Test
-    public void test2(){
+    public void getCityByNameTest(){
         SqlSession sqlSession= BasicUtils.getSqlSession();
         UserMapper userMapper=sqlSession.getMapper(UserMapper.class);
         City city=userMapper.selectCityByName("福州");
@@ -29,11 +29,11 @@ public class DaoTest {
         sqlSession.close();
     }
     @Test
-    public void test3(){
+    public void addCityTest(){
         SqlSession sqlSession= BasicUtils.getSqlSession();
         UserMapper userMapper=sqlSession.getMapper(UserMapper.class);
         City city=new City();
-        city.setName("多拉贡");
+        city.setName("德克士");
         city.setLat("123");
         city.setLon("321");
         city.setId(1234567);
@@ -42,12 +42,27 @@ public class DaoTest {
         sqlSession.close();
     }
     @Test
-    public void test4(){
+    public void deleteCityTest(){
         SqlSession sqlSession= BasicUtils.getSqlSession();
         UserMapper userMapper=sqlSession.getMapper(UserMapper.class);
         userMapper.deleteCity(1234567);
         sqlSession.commit();
         sqlSession.close();
+    }
+    @Test
+    public void getCityListByPageTest(){
+        SqlSession sqlSession= BasicUtils.getSqlSession();
+        UserMapper userMapper=sqlSession.getMapper(UserMapper.class);
+        int start=1;
+        int len=2;
+        List<City> cityListByPage = userMapper.getCityListByPage(start, len);
+        for (City city:cityListByPage
+             ) {
+            System.out.println(city);
+        }
+        sqlSession.commit();
+        sqlSession.close();
+
     }
 }
 
